@@ -26,6 +26,9 @@ mongoose.connect(
     if (err) {
       return console.log("Error in connection", err);
     }
+    app.get("/", (req, resp) => {
+      resp.send("User Authentication server");
+    });
     app.get("/dashboard", protectedRoute);
     app.use("/users", userRouter);
     app.listen(process.env.PORT, () => {
