@@ -56,7 +56,7 @@ const isEmailRegisteredSignUp = (req, resp, next) => {
       if (data.length != 0) {
         return resp
           .status(200)
-          .json({ status: "Successfull", message: "Email Already registred" });
+          .json({ status: "Unsuccessful", message: "Email Already registred" });
       }
       next();
     })
